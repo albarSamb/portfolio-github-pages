@@ -13,8 +13,8 @@ import { useEffect } from 'react';
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1500, // Durée de l'animation
-      //once: true      // Animation uniquement à la première apparition
+      duration: 2300, // Durée de l'animat° 
+      once: true      // Animation uniquement à la first apparition
     });
   }, []);
 

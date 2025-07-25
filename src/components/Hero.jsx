@@ -6,18 +6,18 @@ function Hero() {
   return (
     <section id="hero" className="hero">
       <div className="hero-content" data-aos="fade-up">
-        <img src="/my_photo.jpg" alt="Portrait de Albar SAMB" className="profile-pic" />
+      <img src={`${process.env.PUBLIC_URL}/photo.jpg`} alt="Portrait de Albar SAMB" className="profile-pic" />
         
         <h2 data-aos="fade-right">
-          Salut, je suis <span className='my_name'>Albar SAMB</span>.<p className="p1">Bienvenue sur mon portfolio interactif !!!</p>
+          Salut, je suis <span className='my_name' style={{color: 'black'}}>Albar SAMB</span> <br />
           
-          <span style={{ color: '#ff0000', fontWeight: 'bold' }}>
+          <span style={{ color: '#00d4ff', fontWeight: 'bold' }}>
             <Typewriter
               words={[
-                'Cofondateur de 4TheTech',
                 'Développeur Fullstack ',
-                'Entrepreneur Tech Visionnaire 🔥',
                 'Futur Ingénieur IA/ML',
+                'Cofondateur de 4TheTech',
+                'Entrepreneur Tech Visionnaire 🔥',
               ]}
               loop={0} // 0 = infini
               cursor
@@ -28,15 +28,15 @@ function Hero() {
             />
           </span>
         </h2>
-        <br /> <br />
+        <br /> <br /> <br />
 
         <p data-aos="slide-left" className="p1">
-          🤖 Futur Ingénieur IA/ML | 🚀 Créateur d’Impact
+        Ingénieur Logiciel | 🤖 Futur Ingénieur IA/ML | 🚀 Créateur d’Impact
         </p>
 
         <p>
           Je suis un développeur fullstack passionné, avec une solide base en conception et développement d’applications web. 
-          Actuellement étudiant en Master 1 SIR, je mène des projets académiques et personnels complexes tout en construisant mon avenir 
+          Actuellement étudiant en Master 1 SIR à l'UCAD au niveau du département Mathématiques et Informatique, je mène des projets académiques et personnels complexes tout en construisant mon avenir 
           autour des technologies émergentes comme l’intelligence artificielle et l’IoT.
         </p>
 

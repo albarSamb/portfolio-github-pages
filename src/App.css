@@ -44,15 +44,34 @@ body {
 }
 
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex-direction: column;
+  padding: 40px 20px;
+  /* background: url('/background.jpg') center/cover no-repeat; /* optionnel */
+  backdrop-filter: blur(8px);
+}
+.hero-content {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.2);
+  max-width: 800px;
+  width: 100%;
+  animation: fadeIn 2s ease-in;
+}
+.my_name {
+  color: #00d4ff;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.p1 {
+  font-size: 18px;
   color: #fff;
-  background: transparent;
-  padding: 30px;
 }
 
 .hero h1 {
@@ -86,6 +105,7 @@ body {
 }
 
 .profile-pic {
+  max-height: 30vh;
   width: 220px;
   border-radius: 20px;
   object-fit: cover;
@@ -93,6 +113,10 @@ body {
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   margin-bottom: 20px;
 }
+.profile-pic:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+} 
 
 /* SECTION GÉNÉRIQUE GLASSMORPHISME */
 .about, .projects, .contact {
@@ -127,9 +151,57 @@ h2 {
   transition: 0.3s ease-in-out;
 }
 
-.project:hover {
+/* .project:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+} */
+/* .project-card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  transition: transform 0.3s ease;
+} */
+.project-img {
+  width: 100%;
+  max-height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+/* .project-card:hover {
+  transform: translateY(-10px);
+} */
+.project-card .outils{
+  color: #00d4ff;
+}
+.project-card.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  text-align: center;
+}
+.project-card.glass:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+.progress-fill{
+  transition: width; /*je veins dajouter*/
+}
+.project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
 .contact a {
@@ -141,6 +213,34 @@ h2 {
   color: #ff4d4d;
   font-size: 20px;
 }
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #00d4ff;
+  }
+  
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+  
+    .nav-links.open {
+      display: flex;
+    }
+  }  
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
