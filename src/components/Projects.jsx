@@ -1,6 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+import { useTranslation } from 'react-i18next';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -10,39 +11,43 @@ import { BsGithub } from "react-icons/bs";
 
 const projects = [
   {
-    title: "Collecte de données sur le Smishing",
-    description: "Infrastructure low-cost pour la collecte et l’analyse de SMS suspects qui va nous permettre de detecter les cas de smishing à l'avenir.",
+    key: "rag",
+    image: "/rag.png",
+    tech: ["FastAPI", "ChromaDB", "LLM", "PostgreSQL", "Python"],
+    link: "https://github.com/albarSamb/rag-assistant"
+  },
+  {
+    key: "bichette",
+    image: "/bichette.png",
+    tech: ["FastAPI", "PostgreSQL", "Redis", "Stripe", "Claude API", "Docker", "Vue.js 3"],
+    link: "https://github.com/albarSamb/bichette-saas"
+  },
+  {
+    key: "sentiment",
+    image: "/sentiment.jpg",
+    tech: ["PyTorch", "NLP", "Python", "NumPy", "Pandas"],
+    link: "https://github.com/albarSamb/Sentiement-analysis-with-pytorch"
+  },
+  {
+    key: "smishing",
     image: "/smishing.png",
-    tech: ["IA","Raspberry Pi", "Linux", "IoT"],
+    tech: ["IA", "Raspberry Pi", "Linux", "IoT"],
     link: "https://github.com/albarSamb/Infrastructe-low-cost-de-Collecte-de-donn-es-sur-le-Smishing"
   },
   {
-    title: "Création d’une boutique en ligne pour la vente de produits en utilisant C# et la technologie ASP.NET",
-    description: "Boutique en ligne développée en C# et ASP.NET avec inscription/authentification, gestion de profils, affichage/filtrage de produits, panier, paiement Stripe et factures. Données via API REST, stockées avec Entity Framework Core.(En binôme)",
+    key: "ecommerce",
     image: "/Ecommerce.png",
-    tech: ["React","C#", "ASP.NET Web API", "Entity Framework","Stripe.net "],
+    tech: ["React", "C#", "ASP.NET Web API", "Entity Framework", "Stripe"],
     link: "https://github.com/Birame-Owens/ECommerceBoutique"
-  },
-  {
-    title: "App Web de gestion d'Emplois du temps",
-    description: "Application de gestion des emplois du temps et salles de la Section Informatique.",
-    image: "/edt.png",
-    tech: ["PHP", "jQuery", "Ajax"],
-    link: "https://github.com/albarSamb/gestionEDT"
-  },
-  {
-    title: "Système d'inscription/connexion (C++)",
-    description: "Système simple d’authentification via le terminal.",
-    image: "/cpp.png",
-    tech: ["C++"],
-    link: "https://github.com/albarSamb/Systeme_Inscription_Connexion_CPP"
   },
 ];
 
 function Projects() {
+  const { t } = useTranslation();
+
   return (
     <section id="projects" className="projects">
-      <h2>Projets Réalisés</h2>
+      <h2>{t('projects.title')}</h2>
       <Swiper
         modules={[Navigation, Pagination, EffectCoverflow]}
         spaceBetween={30}
@@ -50,36 +55,34 @@ function Projects() {
         navigation
         pagination={{ clickable: true }}
         effect="coverflow"
-        grabCursor={true}
+        grabCursor={false}
         centeredSlides={true}
+        preventClicks={false}
+        preventClicksPropagation={false}
         breakpoints={{
-          768: {
-            slidesPerView: 2
-          },
-          1024: {
-            slidesPerView: 3 
-          }
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
         }}
       >
-        {projects.map((proj, index) => (
-          <SwiperSlide key={index}>
+        {projects.map((proj) => (
+          <SwiperSlide key={proj.key}>
             <div className="project-card glass">
               <img
-                src={`${process.env.PUBLIC_URL}${proj.image}`}
-                alt={proj.title}
+                src={`${import.meta.env.BASE_URL}${proj.image.replace(/^\//, '')}`}
+                alt={t(`projects.items.${proj.key}.title`)}
                 className="project-img"
               />
-              <h3 style={{color:'black'}}>{proj.title}</h3>
-              <p style={{color:'black'}}>{proj.description}</p>
-              <p className='outils'><strong>Outils :</strong> {proj.tech.join(', ')}</p>
-              <a href={proj.link} target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+              <h3 style={{color:'black'}}>{t(`projects.items.${proj.key}.title`)}</h3>
+              <p style={{color:'black'}}>{t(`projects.items.${proj.key}.description`)}</p>
+              <p className='outils'><strong>{t('projects.tools')}:</strong> {proj.tech.join(', ')}</p>
+              <a href={proj.link} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>{t('projects.viewGithub')}</a>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-      <p>Voir plus sur mon GitHub: <a href="https://github.com/albarSamb">&nbsp;&nbsp;<BsGithub /></a></p>
+      <p>{t('projects.seeMore')}: <a href="https://github.com/albarSamb">&nbsp;&nbsp;<BsGithub /></a></p>
     </section>
-  );  
+  );
 }
 
 export default Projects;

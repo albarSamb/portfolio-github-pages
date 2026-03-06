@@ -1,86 +1,95 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import './About.css';
+import { useTranslation } from 'react-i18next';
+import { FaJsSquare, FaReact, FaNode, FaPython, FaJava, FaDocker, FaDatabase } from 'react-icons/fa';
+import { SiMongodb, SiGithub, SiCplusplus, SiScikitlearn, SiExpress, SiGitlab, SiFastapi, SiVuedotjs, SiTypescript, SiTailwindcss, SiRedis, SiApachespark, SiApachekafka, SiApacheairflow, SiPytorch, SiPostgresql, SiNumpy, SiPandas } from 'react-icons/si';
+import { TbBrandCSharp, TbSql } from "react-icons/tb";
 
-const skills = [
-  { name: "HTML / CSS", level: 90 },
-  { name: "JavaScript", level: 85 },
-  { name: "React.js", level: 85 },
-  { name: "Express.js", level: 80 },
-  { name: "PHP", level: 75 },
-  { name: "Python", level: 85 },
-  { name: "Machine Learning", level: 65 },
-  { name: "C#", level: 75 },
-  { name: "C/C++", level: 65 },
-  { name: "Java / JEE", level: 55 },
-  { name: "Flutter / Dart", level: 55 },
-  { name: "Git / Docker", level: 65 },
-  { name: "PostgreSQL / MySQL", level: 80 },
+const skillsGroups = [
+  {
+    categoryKey: "about.languages",
+    skills: [
+      { name: "Python", icon: <FaPython /> },
+      { name: "JavaScript", icon: <FaJsSquare /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "C#", icon: <TbBrandCSharp /> },
+      { name: "C / C++", icon: <SiCplusplus /> },
+      { name: "Java", icon: <FaJava /> },
+    ]
+  },
+  {
+    categoryKey: "about.aiml",
+    skills: [
+      { name: "RAG / Embeddings", icon: <FaPython /> },
+{ name: "PyTorch", icon: <SiPytorch /> },
+      { name: "Scikit-learn", icon: <SiScikitlearn /> },
+      { name: "NumPy", icon: <SiNumpy /> },
+      { name: "Pandas", icon: <SiPandas /> },
+    ]
+  },
+  {
+    categoryKey: "about.backend",
+    skills: [
+      { name: "FastAPI", icon: <SiFastapi /> },
+      { name: "Node.js", icon: <FaNode /> },
+      { name: "Express.js", icon: <SiExpress /> },
+      { name: "SQLAlchemy", icon: <FaDatabase /> },
+    ]
+  },
+  {
+    categoryKey: "about.frontend",
+    skills: [
+      { name: "Vue.js 3", icon: <SiVuedotjs /> },
+      { name: "React", icon: <FaReact /> },
+      { name: "TailwindCSS", icon: <SiTailwindcss /> },
+    ]
+  },
+  {
+    categoryKey: "about.bigdata",
+    skills: [
+      { name: "Apache Spark", icon: <SiApachespark /> },
+      { name: "Kafka", icon: <SiApachekafka /> },
+      { name: "Airflow", icon: <SiApacheairflow /> },
+    ]
+  },
+  {
+    categoryKey: "about.databases",
+    skills: [
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
+      { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "Redis", icon: <SiRedis /> },
+      { name: "SQL", icon: <TbSql /> },
+    ]
+  },
+  {
+    categoryKey: "about.tools",
+    skills: [
+      { name: "Docker", icon: <FaDocker /> },
+      { name: "GitHub Actions", icon: <SiGithub /> },
+      { name: "GitLab", icon: <SiGitlab /> },
+    ]
+  },
 ];
 
 function About() {
-  const [visibleIndexes, setVisibleIndexes] = useState([]);
-  const skillRefs = useRef([]);
+  const { t } = useTranslation();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach((entry, i) => {
-          const index = skillRefs.current.indexOf(entry.target);
-          if (entry.isIntersecting && !visibleIndexes.includes(index)) {
-            setVisibleIndexes(prev => [...new Set([...prev, index])]);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-  
-    skillRefs.current.forEach((el) => {
-      if (el) {
-        observer.observe(el);
-  
-        // 👉 Détection manuelle des éléments déjà visibles au chargement
-        const rect = el.getBoundingClientRect();
-        if (
-          rect.top >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-        ) {
-          const index = skillRefs.current.indexOf(el);
-          setVisibleIndexes(prev => [...new Set([...prev, index])]);
-        }
-      }
-    });
-  
-    return () => {
-      skillRefs.current.forEach((el) => {
-        if (el) observer.unobserve(el);
-      });
-    };
-  }, []);  
-
-return (
+  return (
     <section id="about" className="about-section" data-aos="fade-up">
       <div className="about-container">
-        <h2>À propos de moi</h2>
-        <p>Voici un aperçu de mes compétences techniques :</p>
-        <div className="skills-container">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="skill-bar"
-              ref={el => (skillRefs.current[index] = el)}
-            >
-              <div className="skill-title">{skill.name}</div>
-              <div className="progress-bar">
-                <div
-                  className="progress-fill"
-                  style={{
-                    width: visibleIndexes.includes(index)
-                      ? `${skill.level}%`
-                      : '0%',
-                  }}
-                >
-                  {visibleIndexes.includes(index) && <span>{skill.level}%</span>}
-                </div>
+        <h2>{t('about.title')}</h2>
+        <p>{t('about.intro')}</p>
+        <div className="skills-groups-container">
+          {skillsGroups.map((group, groupIndex) => (
+            <div key={groupIndex} className="skills-group">
+              <h3 className="group-title">{t(group.categoryKey)}</h3>
+              <div className="skills-grid">
+                {group.skills.map((skill, skillIndex) => (
+                  <div key={skillIndex} className="skill-card">
+                    <div className="skill-icon">{skill.icon}</div>
+                    <div className="skill-name">{skill.name}</div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}

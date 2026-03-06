@@ -1,0 +1,81 @@
+{
+  "navbar": {
+    "home": "Home",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm",
+    "name": "Albar SAMB",
+    "subtitle": "AI/ML Engineer | Data Engineer | Software Engineer",
+    "downloadCV": "Download my CV",
+    "description1": "Passionate fullstack developer pursuing a Master's in Data & Artificial Intelligence at HETIC (Paris), after completing a Computer Science Bachelor and Master SIR at Cheikh Anta Diop University (UCAD).",
+    "description2": "Passionate about applied AI (LLM, RAG, ML, Computer Vision) and backend/frontend development, I actively build concrete projects to deepen my skills and create impact."
+  },
+  "about": {
+    "title": "Skills",
+    "intro": "Here is an overview of my technical skills:",
+    "languages": "Programming Languages",
+    "aiml": "AI & LLM",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "bigdata": "Data & Big Data",
+    "databases": "Databases",
+    "tools": "Cloud & DevOps"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "items": {
+      "skipper": {
+        "context": "Industrial project — HETIC",
+        "period": "Feb. 2026 – Apr. 2026",
+        "duration": "3 months (2 weeks/month, near full-time)",
+        "bullets": [
+          "Development of ML models with PyTorch for multi-channel magnetic image analysis (4-channel TIF: Bx, By, Bz, Norm).",
+          "Results: pipe presence classification Accuracy 93%, Recall 96%; magnetic width regression MAE 0.82 m.",
+          "Handling heterogeneous image sizes (150×150 to 4000×3750): normalization, padding/patching, data augmentation.",
+          "Production-ready delivery: model (.pth) + reproducible inference.py script."
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "tools": "Stack",
+    "viewGithub": "View on GitHub",
+    "seeMore": "See more on my GitHub",
+    "items": {
+      "bichette": {
+        "title": "Bichette Thomas — SaaS Web Application",
+        "description": "Modular FastAPI backend (auth, products, orders, booking, payments, chat). PostgreSQL 16, JWT, Redis, Stripe + webhooks. LLM: Claude API with dynamic context and SSE streaming. Docker + Nginx + CI/CD GitHub Actions."
+      },
+      "rag": {
+        "title": "RAG Platform — AI Assistant",
+        "description": "Full RAG pipeline: ingestion, chunking, embeddings and vector search (ChromaDB). FastAPI with conversation management and PostgreSQL storage."
+      },
+      "sentiment": {
+        "title": "Sentiment Analysis (PyTorch)",
+        "description": "Binary sentiment classification on 100K tweets (Sentiment140) with PyTorch: comparison of simple NN, GRU and bidirectional LSTM. Full NLP preprocessing. Best model: Bidirectional GRU."
+      },
+      "smishing": {
+        "title": "Smishing Data Collection",
+        "description": "Low-cost infrastructure for collecting and analyzing suspicious SMS to detect smishing cases."
+      },
+      "ecommerce": {
+        "title": "Online Store — C# ASP.NET",
+        "description": "E-commerce built with C# and ASP.NET: registration/authentication, profile management, product listing/filtering, cart, Stripe payments and invoices. (Pair project)"
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "intro": "Have a question or a proposal? Feel free to contact me!",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "visitProfile": "Visit my profile",
+    "seeProjects": "View my projects"
+  }
+}
