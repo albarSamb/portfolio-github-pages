@@ -11,8 +11,8 @@
     "name": "Albar SAMB",
     "subtitle": "AI/ML Engineer | Data Engineer | Software Engineer",
     "downloadCV": "Télécharger mon CV",
-    "description1": "Développeur fullstack passionné, je poursuis un Mastère Data & Intelligence Artificielle à HETIC (Paris) après avoir obtenu ma Licence Informatique et mon Master SIR à l'Université Cheikh Anta Diop (UCAD).",
-    "description2": "Passionné par l'IA appliquée (LLM, RAG, ML, Computer Vision) et le développement backend/frontend, je construis activement des projets concrets pour approfondir mes compétences et créer de l'impact."
+    "description1": "Étudiant en Mastère Data & Intelligence Artificielle à HETIC (Paris), je recherche une alternance de 12 mois à partir de septembre 2026 (rythme 3 sem. entreprise / 1 sem. formation) en tant qu'AI Engineer, Data Engineer ou Software Engineer orienté IA.",
+    "description2": "Spécialisé en IA appliquée (LLM, RAG, ML, Computer Vision) et développement backend/frontend, je construis des projets concrets avec une approche rigoureuse, orientée qualité logicielle et autonomie."
   },
   "about": {
     "title": "Compétences",
@@ -45,6 +45,7 @@
     "title": "Projets Réalisés",
     "tools": "Stack",
     "viewGithub": "Voir sur GitHub",
+    "visitSite": "Voir le site",
     "seeMore": "Voir plus sur mon GitHub",
     "items": {
       "bichette": {

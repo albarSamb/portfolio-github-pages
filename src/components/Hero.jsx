@@ -12,7 +12,7 @@ function Hero() {
         <img src={`${import.meta.env.BASE_URL}photo.jpg`} alt="Portrait de Albar SAMB" className="profile-pic" />
 
         <h2>
-          {t('hero.title')} <span className='my_name' style={{color: 'black'}}>{t('hero.name')}</span>
+          {t('hero.title')} <span className='my_name'>{t('hero.name')}</span>
         </h2>
 
         <p className="p1">
@@ -28,8 +28,8 @@ function Hero() {
         </p>
 
         <a
-          href={`${import.meta.env.BASE_URL}CV_Albar_samb.pdf`}
-          download="CV_Albar_Samb.pdf"
+          href={`${import.meta.env.BASE_URL}AlbarSAMB_AI_Engineer.pdf`}
+          download="AlbarSAMB_AI_Engineer.pdf"
           className="cv-download-btn"
         >
           <FaDownload /> {t('hero.downloadCV')}

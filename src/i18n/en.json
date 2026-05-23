@@ -11,8 +11,8 @@
     "name": "Albar SAMB",
     "subtitle": "AI/ML Engineer | Data Engineer | Software Engineer",
     "downloadCV": "Download my CV",
-    "description1": "Passionate fullstack developer pursuing a Master's in Data & Artificial Intelligence at HETIC (Paris), after completing a Computer Science Bachelor and Master SIR at Cheikh Anta Diop University (UCAD).",
-    "description2": "Passionate about applied AI (LLM, RAG, ML, Computer Vision) and backend/frontend development, I actively build concrete projects to deepen my skills and create impact."
+    "description1": "Master's student in Data & Artificial Intelligence at HETIC (Paris), seeking a 12-month work-study program starting September 2026 (3 weeks company / 1 week school) as AI Engineer, Data Engineer or AI-focused Software Engineer.",
+    "description2": "Specialized in applied AI (LLM, RAG, ML, Computer Vision) and backend/frontend development, I build concrete projects with a rigorous approach focused on software quality and autonomy."
   },
   "about": {
     "title": "Skills",
@@ -45,6 +45,7 @@
     "title": "Projects",
     "tools": "Stack",
     "viewGithub": "View on GitHub",
+    "visitSite": "Visit site",
     "seeMore": "See more on my GitHub",
     "items": {
       "bichette": {

@@ -8,6 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import '../App.css';
 import { BsGithub } from "react-icons/bs";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
@@ -20,13 +21,14 @@ const projects = [
     key: "bichette",
     image: "/bichette.png",
     tech: ["FastAPI", "PostgreSQL", "Redis", "Stripe", "Claude API", "Docker", "Vue.js 3"],
-    link: "https://github.com/albarSamb/bichette-saas"
+    link: "https://github.com/Birame-Owens/bichete-thomas",
+    liveLink: "https://bichettethomas.site/"
   },
   {
     key: "sentiment",
     image: "/sentiment.jpg",
     tech: ["PyTorch", "NLP", "Python", "NumPy", "Pandas"],
-    link: "https://github.com/albarSamb/Sentiement-analysis-with-pytorch"
+    link: "https://github.com/albarSamb/Sentiment_analysis_with_PyTorch"
   },
   {
     key: "smishing",
@@ -72,10 +74,19 @@ function Projects() {
                 alt={t(`projects.items.${proj.key}.title`)}
                 className="project-img"
               />
-              <h3 style={{color:'black'}}>{t(`projects.items.${proj.key}.title`)}</h3>
-              <p style={{color:'black'}}>{t(`projects.items.${proj.key}.description`)}</p>
+              <h3>{t(`projects.items.${proj.key}.title`)}</h3>
+              <p>{t(`projects.items.${proj.key}.description`)}</p>
               <p className='outils'><strong>{t('projects.tools')}:</strong> {proj.tech.join(', ')}</p>
-              <a href={proj.link} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>{t('projects.viewGithub')}</a>
+              <div className="project-links">
+                {proj.liveLink && (
+                  <a href={proj.liveLink} target="_blank" rel="noopener noreferrer" className="project-link-live" onClick={e => e.stopPropagation()}>
+                    <FaExternalLinkAlt /> {t('projects.visitSite')}
+                  </a>
+                )}
+                <a href={proj.link} target="_blank" rel="noopener noreferrer" className="project-link-github" onClick={e => e.stopPropagation()}>
+                  {t('projects.viewGithub')}
+                </a>
+              </div>
             </div>
           </SwiperSlide>
         ))}

@@ -1,9 +1,9 @@
 import React from 'react';
 import './About.css';
 import { useTranslation } from 'react-i18next';
-import { FaJsSquare, FaReact, FaNode, FaPython, FaJava, FaDocker, FaDatabase } from 'react-icons/fa';
+import { FaJsSquare, FaReact, FaNode, FaPython, FaJava, FaDocker, FaDatabase, FaAws } from 'react-icons/fa';
 import { SiMongodb, SiGithub, SiCplusplus, SiScikitlearn, SiExpress, SiGitlab, SiFastapi, SiVuedotjs, SiTypescript, SiTailwindcss, SiRedis, SiApachespark, SiApachekafka, SiApacheairflow, SiPytorch, SiPostgresql, SiNumpy, SiPandas } from 'react-icons/si';
-import { TbBrandCSharp, TbSql } from "react-icons/tb";
+import { TbSql } from "react-icons/tb";
 
 const skillsGroups = [
   {
@@ -12,7 +12,6 @@ const skillsGroups = [
       { name: "Python", icon: <FaPython /> },
       { name: "JavaScript", icon: <FaJsSquare /> },
       { name: "TypeScript", icon: <SiTypescript /> },
-      { name: "C#", icon: <TbBrandCSharp /> },
       { name: "C / C++", icon: <SiCplusplus /> },
       { name: "Java", icon: <FaJava /> },
     ]
@@ -21,7 +20,7 @@ const skillsGroups = [
     categoryKey: "about.aiml",
     skills: [
       { name: "RAG / Embeddings", icon: <FaPython /> },
-{ name: "PyTorch", icon: <SiPytorch /> },
+      { name: "PyTorch", icon: <SiPytorch /> },
       { name: "Scikit-learn", icon: <SiScikitlearn /> },
       { name: "NumPy", icon: <SiNumpy /> },
       { name: "Pandas", icon: <SiPandas /> },
@@ -67,6 +66,7 @@ const skillsGroups = [
       { name: "Docker", icon: <FaDocker /> },
       { name: "GitHub Actions", icon: <SiGithub /> },
       { name: "GitLab", icon: <SiGitlab /> },
+      { name: "AWS S3", icon: <FaAws /> },
     ]
   },
 ];
