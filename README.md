@@ -6,27 +6,33 @@ Portfolio personnel d'Albar SAMB, Ingénieur IA, déployé sur GitHub Pages.
 
 ## Stack
 
-- **React 19** + **Vite**
-- **react-i18next** — multilingue (FR / EN)
-- **Swiper** — carousel de projets
-- **AOS** — animations au scroll
+- **Astro** + **Tailwind CSS** — site statique, thème terminal minimal (dark par défaut, toggle clair)
+- **@fontsource/jetbrains-mono** + **@fontsource/inter**
+- **@astrojs/sitemap** — génération du sitemap
 - **gh-pages** — déploiement GitHub Pages
+
+## Contenu
+
+Le texte de chaque section vit dans `src/data/*.json` (site, about, skills, experiences, projects, education, certifications, community) — à éditer directement, sans toucher aux composants.
 
 ## Sections
 
-| Section | Contenu |
+| Section | Fichier |
 |---|---|
-| Hero | Présentation, photo, téléchargement CV |
-| About | Compétences et profil |
-| Experience | Parcours professionnel |
-| Projects | RAG Assistant, Bichette, Sentiment Analysis, Smishing, E-commerce |
-| Contact | Formulaire de contact |
+| Hero | `src/components/Hero.astro` |
+| À propos | `src/components/About.astro` |
+| Compétences | `src/components/Skills.astro` |
+| Expériences | `src/components/Experience.astro` |
+| Projets | `src/components/Projects.astro` |
+| Formation | `src/components/Education.astro` |
+| Certifications | `src/components/Certifications.astro` |
+| Communautés | `src/components/Community.astro` |
 
 ## Lancer en local
 
 ```bash
 npm install
-npm start        # http://localhost:5173
+npm run dev      # http://localhost:4321/portfolio-github-pages
 ```
 
 ## Déployer

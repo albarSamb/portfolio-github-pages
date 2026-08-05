@@ -1,0 +1,19 @@
+---
+import certifications from '../data/certifications.json';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="certifications" class="py-16 border-t border-border">
+  <SectionHeading index="06" kicker="certifications" title="Certifications" />
+  <ul class="space-y-3">
+    {certifications.map((c) => (
+      <li class="flex items-baseline justify-between gap-2 text-sm">
+        <span class="text-fg">
+          {c.name}
+          {c.issuer && <span class="text-muted"> · {c.issuer}</span>}
+        </span>
+        <span class="text-xs font-mono text-accent shrink-0">{c.status}</span>
+      </li>
+    ))}
+  </ul>
+</section>

@@ -1,0 +1,9 @@
+---
+import about from '../data/about.json';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="about" class="py-16 border-t border-border">
+  <SectionHeading index="01" kicker="whoami" title="À propos" />
+  <p class="font-sans text-base leading-relaxed max-w-2xl text-fg/90">{about.text}</p>
+</section>

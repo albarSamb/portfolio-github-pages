@@ -1,0 +1,26 @@
+[
+  {
+    "role": "Apprenti Ingénieur IA",
+    "company": "INSP (Institut national du service public)",
+    "location": "Strasbourg",
+    "period": "Sept. 2026 – Oct. 2027",
+    "type": "Alternance",
+    "description": "Département du Système d'Information et de l'Innovation Numérique (DSIIN). Conception de solutions d'IA générative pour l'État : IA agentique, RAG, assistants internes."
+  },
+  {
+    "role": "Développeur & Intégrateur IA",
+    "company": "Visibl (agence web)",
+    "location": "Paris · Remote",
+    "period": "Juin – Août 2026",
+    "type": null,
+    "description": "Développement et livraison de sites web clients (BTP, VTC, e-commerce, santé, hôtellerie), configuration DNS, intégration de paiements, intégration d'IA. 10+ sites livrés, FR & international."
+  },
+  {
+    "role": "Développeur Backend & Modélisation BPM",
+    "company": "DISI, UCAD",
+    "location": "Dakar",
+    "period": "Déc. 2023 – Jan. 2024",
+    "type": null,
+    "description": "Développement backend Spring Boot et modélisation de processus métier (BPMN) : inscription, réinscription, suspension, désistements."
+  }
+]

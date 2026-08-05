@@ -1,0 +1,35 @@
+---
+import projects from '../data/projects.json';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="projects" class="py-16 border-t border-border">
+  <SectionHeading index="04" kicker="projets" title="Projets" />
+  <div class="grid gap-4 sm:grid-cols-2">
+    {projects.map((p) => (
+      <div class="border border-border p-5 flex flex-col hover:border-accent transition-colors">
+        <h3 class="font-sans font-semibold text-fg mb-1">{p.title}</h3>
+        <p class="text-xs text-muted mb-3">{p.subtitle}</p>
+        <p class="font-sans text-sm leading-relaxed text-fg/90 mb-4 flex-1">{p.description}</p>
+        {p.note && <p class="text-xs text-accent mb-3">{p.note}</p>}
+        <div class="flex flex-wrap gap-1.5 mb-4">
+          {p.tech.map((t) => (
+            <span class="text-[11px] font-mono text-muted border border-border px-2 py-0.5">{t}</span>
+          ))}
+        </div>
+        <div class="flex gap-4 font-mono text-xs mt-auto">
+          {p.link && (
+            <a href={p.link} target="_blank" rel="noopener noreferrer" class="link-underline hover:text-accent transition-colors">
+              → repo
+            </a>
+          )}
+          {p.liveLink && (
+            <a href={p.liveLink} target="_blank" rel="noopener noreferrer" class="link-underline hover:text-accent transition-colors">
+              → site
+            </a>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

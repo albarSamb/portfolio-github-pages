@@ -1,0 +1,19 @@
+---
+import education from '../data/education.json';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="education" class="py-16 border-t border-border">
+  <SectionHeading index="05" kicker="formation" title="Formation" />
+  <ul class="space-y-4">
+    {education.map((e) => (
+      <li class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 border-b border-border pb-4 last:border-b-0 last:pb-0">
+        <div>
+          <p class="font-sans font-medium text-fg">{e.degree}</p>
+          <p class="text-sm text-muted">{e.school}</p>
+        </div>
+        {e.period && <span class="text-xs font-mono text-muted shrink-0">{e.period}</span>}
+      </li>
+    ))}
+  </ul>
+</section>

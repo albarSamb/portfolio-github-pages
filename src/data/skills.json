@@ -1,0 +1,30 @@
+[
+  {
+    "category": "Langages",
+    "items": ["Python", "PHP", "Java", "JavaScript / TypeScript", "SQL"]
+  },
+  {
+    "category": "IA générative & LLM",
+    "items": ["RAG", "Agents IA", "LangChain", "LangGraph", "MCP", "FastAPI", "ChromaDB", "FAISS", "Qdrant", "APIs (Claude, Groq, Mistral)"]
+  },
+  {
+    "category": "Machine Learning / Deep Learning",
+    "items": ["PyTorch", "scikit-learn", "CNN", "LSTM / GRU", "XGBoost", "LightGBM", "CatBoost"]
+  },
+  {
+    "category": "Data Engineering",
+    "items": ["Kafka", "Spark", "Airflow", "PostgreSQL", "Redis", "MinIO", "Docker", "Architecture Lambda"]
+  },
+  {
+    "category": "Développement web",
+    "items": ["Laravel", "React", "Vue.js 3", "FastAPI", "REST"]
+  },
+  {
+    "category": "Cloud & MLOps",
+    "items": ["AWS", "MLflow", "Evidently AI", "DVC", "GitHub Actions"]
+  },
+  {
+    "category": "BI",
+    "items": ["Power BI"]
+  }
+]

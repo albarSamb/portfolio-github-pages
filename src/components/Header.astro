@@ -1,0 +1,33 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const links = [
+  { href: '#about', label: 'about' },
+  { href: '#skills', label: 'skills' },
+  { href: '#experience', label: 'work' },
+  { href: '#projects', label: 'projects' },
+  { href: '#education', label: 'education' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
+  <div class="max-w-content mx-auto px-6 h-14 flex items-center justify-between gap-4">
+    <a href="#top" class="font-mono text-sm text-fg shrink-0">
+      albar<span class="text-accent">@</span>samb<span class="text-muted">:~$</span>
+    </a>
+
+    <nav
+      class="flex items-center gap-1.5 sm:gap-2 font-mono text-[11px] sm:text-xs text-muted overflow-x-auto whitespace-nowrap"
+      aria-label="Navigation principale"
+    >
+      {links.map((l, i) => (
+        <>
+          <a href={l.href} class="px-1 py-1 hover:text-accent transition-colors">{l.label}</a>
+          {i < links.length - 1 && <span aria-hidden="true" class="text-border">·</span>}
+        </>
+      ))}
+    </nav>
+
+    <ThemeToggle />
+  </div>
+</header>

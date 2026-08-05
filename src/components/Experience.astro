@@ -1,0 +1,24 @@
+---
+import experiences from '../data/experiences.json';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="experience" class="py-16 border-t border-border">
+  <SectionHeading index="03" kicker="experience" title="Expériences" />
+  <div class="space-y-10 border-l border-border pl-6 sm:pl-8">
+    {experiences.map((exp) => (
+      <div class="relative">
+        <span class="absolute -left-[29px] sm:-left-[33px] top-1.5 w-2.5 h-2.5 bg-accent" aria-hidden="true"></span>
+        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+          <h3 class="font-sans font-semibold text-fg">{exp.role}</h3>
+          <span class="text-xs font-mono text-muted shrink-0">{exp.period}</span>
+        </div>
+        <p class="text-sm text-muted mb-2">
+          {exp.company} · {exp.location}
+          {exp.type && <span class="text-accent"> · {exp.type}</span>}
+        </p>
+        <p class="font-sans text-sm leading-relaxed text-fg/90 max-w-2xl">{exp.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

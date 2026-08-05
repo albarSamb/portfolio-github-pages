@@ -1,0 +1,16 @@
+---
+interface Props {
+  index: string;
+  kicker: string;
+  title: string;
+}
+const { index, kicker, title } = Astro.props;
+---
+
+<div class="mb-8 flex items-baseline gap-4">
+  <span class="text-muted text-sm shrink-0">{index} —</span>
+  <div>
+    <p class="text-accent text-xs uppercase tracking-widest mb-1">// {kicker}</p>
+    <h2 class="text-xl sm:text-2xl font-semibold text-fg font-sans">{title}</h2>
+  </div>
+</div>

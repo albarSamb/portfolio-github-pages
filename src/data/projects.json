@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Bichette Thomas",
+    "subtitle": "Application web de gestion (salon)",
+    "description": "Réservation + gestion + paiements intégrés (Wave / Orange Money). En production.",
+    "tech": ["Laravel", "React", "TypeScript", "PostgreSQL", "Redis", "Hetzner VPS"],
+    "note": "Rebuild en cours : Vue 3, FastAPI",
+    "link": "https://github.com/Birame-Owens/bichete-thomas",
+    "liveLink": null
+  },
+  {
+    "title": "ND-World",
+    "subtitle": "E-commerce international",
+    "description": "Boutique en ligne multi-pays en production.",
+    "tech": ["Laravel", "PHP", "React"],
+    "note": null,
+    "link": null,
+    "liveLink": null
+  },
+  {
+    "title": "Seetma",
+    "subtitle": "Reconnaissance faciale événementielle",
+    "description": "Retrouver ses photos d'événement via un scan du visage. Application fullstack.",
+    "tech": ["Computer Vision", "Deep Learning", "Fullstack"],
+    "note": null,
+    "link": null,
+    "liveLink": null
+  },
+  {
+    "title": "RAG Assistant",
+    "subtitle": "Assistant documentaire",
+    "description": "Pipeline RAG complet : ingestion, retrieval, génération.",
+    "tech": ["ChromaDB", "FastAPI", "Claude API"],
+    "note": null,
+    "link": "https://github.com/albarSamb/rag-assistant",
+    "liveLink": null
+  },
+  {
+    "title": "Spotify Data Pipeline",
+    "subtitle": "Pipeline data + détection de fraude",
+    "description": "Architecture Lambda temps réel + batch, détection d'anomalies.",
+    "tech": ["Kafka", "Spark", "Airflow", "PostgreSQL", "Redis", "MinIO"],
+    "note": null,
+    "link": "https://github.com/albarSamb/spotify-data-pipeline",
+    "liveLink": null
+  },
+  {
+    "title": "Sentiment Analysis",
+    "subtitle": "NLP",
+    "description": "Classification de sentiment sur ~100K échantillons.",
+    "tech": ["PyTorch", "BiGRU", "LSTM"],
+    "note": null,
+    "link": "https://github.com/albarSamb/Sentiment_analysis_with_PyTorch",
+    "liveLink": null
+  },
+  {
+    "title": "SKIPPER NDT",
+    "subtitle": "Détection industrielle (projet HETIC × SKIPPER NDT)",
+    "description": "CNN de détection de pipelines (98,94 % accuracy, 99,41 % recall) + MLP résiduel pour la régression de largeur (MAE 0,37 m).",
+    "tech": ["CNN", "Residual MLP", "PyTorch"],
+    "note": "Projet sous accord de confidentialité, pas de repo public.",
+    "link": null,
+    "liveLink": null
+  },
+  {
+    "title": "AI Engineering Roadmap",
+    "subtitle": "Ressources open source",
+    "description": "Roadmap et ressources curées pour l'ingénierie IA (RAG, agents, éval, déploiement).",
+    "tech": ["Open source", "Documentation"],
+    "note": null,
+    "link": null,
+    "liveLink": null
+  }
+]

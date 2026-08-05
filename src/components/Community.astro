@@ -1,0 +1,16 @@
+---
+import community from '../data/community.json';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="community" class="py-16 border-t border-border">
+  <SectionHeading index="07" kicker="community" title="Communautés & pédagogie" />
+  <ul class="space-y-4">
+    {community.map((c) => (
+      <li>
+        <p class="font-sans font-medium text-fg">{c.title}</p>
+        <p class="text-sm text-muted">{c.description}</p>
+      </li>
+    ))}
+  </ul>
+</section>
