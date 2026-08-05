@@ -2,7 +2,7 @@
 
 Portfolio personnel d'Albar SAMB, Ingénieur IA, déployé sur GitHub Pages.
 
-**Live** → [albarsamb.github.io/portfolio-github-pages](https://albarSamb.github.io/portfolio-github-pages)
+**Live** → [albarsamb](https://albarportfolio.netlify.app/)
 
 ## Stack
 
