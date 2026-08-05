@@ -28,3 +28,5 @@ CV_Albar_Samb.md
 
 # éditeurs / outils locaux
 .claude/
+# Local Netlify folder
+.netlify

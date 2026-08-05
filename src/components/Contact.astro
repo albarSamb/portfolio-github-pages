@@ -1,0 +1,120 @@
+---
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="contact" class="py-16 border-t border-border">
+  <SectionHeading index="08" kicker="contact" title="Me contacter" />
+  <p class="font-sans text-sm text-muted mb-8 max-w-2xl">
+    Une question, un projet, une opportunité ? Écris-moi directement depuis ce formulaire.
+  </p>
+
+  <form id="contact-form" class="max-w-xl space-y-5" novalidate>
+    <div>
+      <label for="name" class="block text-xs uppercase tracking-widest text-muted mb-2">Nom</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        maxlength="120"
+        class="w-full bg-transparent border border-border px-3 py-2 font-mono text-sm text-fg outline-none focus:border-accent transition-colors"
+      />
+    </div>
+
+    <div>
+      <label for="email" class="block text-xs uppercase tracking-widest text-muted mb-2">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        maxlength="180"
+        class="w-full bg-transparent border border-border px-3 py-2 font-mono text-sm text-fg outline-none focus:border-accent transition-colors"
+      />
+    </div>
+
+    <div>
+      <label for="message" class="block text-xs uppercase tracking-widest text-muted mb-2">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        required
+        maxlength="4000"
+        rows="5"
+        class="w-full bg-transparent border border-border px-3 py-2 font-mono text-sm text-fg outline-none focus:border-accent transition-colors resize-y"
+      ></textarea>
+    </div>
+
+    <div class="absolute -left-[9999px]" aria-hidden="true">
+      <label for="company">Company</label>
+      <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div class="flex items-center gap-4">
+      <button
+        type="submit"
+        class="font-mono text-sm border border-border px-4 py-2 hover:border-accent hover:text-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        <span id="contact-submit-label">[ send ]</span>
+      </button>
+      <p id="contact-status" class="font-mono text-xs" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const submitLabel = document.getElementById('contact-submit-label');
+  const status = document.getElementById('contact-status');
+  const submitButton = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+
+  // Sert de piège anti-bot : un envoi trop rapide après le chargement de la page est suspect.
+  const renderedAt = Date.now();
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submitButton || !submitLabel || !status) return;
+
+    const formData = new FormData(form);
+    const payload = {
+      name: String(formData.get('name') || '').trim(),
+      email: String(formData.get('email') || '').trim(),
+      message: String(formData.get('message') || '').trim(),
+      company: String(formData.get('company') || ''),
+      elapsed: Date.now() - renderedAt,
+    };
+
+    submitButton.disabled = true;
+    submitLabel.textContent = '[ sending... ]';
+    status.textContent = '';
+    status.classList.remove('text-accent', 'text-red-400');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.status === 429) {
+        submitLabel.textContent = '[ send ]';
+        status.textContent = "Trop d'envois depuis peu. Réessaie un peu plus tard ou écris-moi directement par email.";
+        status.classList.add('text-red-400');
+        submitButton.disabled = false;
+        return;
+      }
+
+      if (!res.ok) throw new Error('request failed');
+
+      submitLabel.textContent = '[ sent ]';
+      status.textContent = 'Message envoyé, merci ! Je réponds généralement sous 48h.';
+      status.classList.add('text-accent');
+      form.reset();
+    } catch {
+      submitLabel.textContent = '[ send ]';
+      status.textContent = "Échec de l'envoi. Réessaie ou écris-moi directement par email.";
+      status.classList.add('text-red-400');
+      submitButton.disabled = false;
+    }
+  });
+</script>
