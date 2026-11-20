@@ -1,15 +1,15 @@
 # Portfolio — Albar SAMB
 
-Portfolio personnel d'Albar SAMB, Ingénieur IA, déployé sur GitHub Pages.
+Portfolio personnel d'Albar SAMB, Ingénieur IA, déployé sur Netlify.
 
 **Live** → [albarsamb](https://albarportfolio.netlify.app/)
 
 ## Stack
 
-- **Astro** + **Tailwind CSS** — site statique, thème terminal minimal (dark par défaut, toggle clair)
+- **Astro** + **Tailwind CSS** — site généré en statique, thème terminal minimal (dark par défaut, toggle clair)
 - **@fontsource/jetbrains-mono** + **@fontsource/inter**
 - **@astrojs/sitemap** — génération du sitemap
-- **gh-pages** — déploiement GitHub Pages
+- **@astrojs/netlify** — pages statiques + fonction serveur pour le formulaire de contact (`/api/contact`, envoi via Resend)
 
 ## Contenu
 
@@ -32,15 +32,15 @@ Le texte de chaque section vit dans `src/data/*.json` (site, about, skills, expe
 
 ```bash
 npm install
-npm run dev      # http://localhost:4321/portfolio-github-pages
+npm run dev      # http://localhost:4321
 ```
 
 ## Déployer
 
 ```bash
-npm run deploy   # build + push sur gh-pages
+netlify deploy --prod   # ou push sur main si le dépôt est relié à Netlify
 ```
 
 ## Auteur
 
-**Albar SAMB** — [GitHub](https://github.com/albarSamb) · [albarsamb1@gmail.com](mailto:albarsamb1@gmail.com)
+**Albar SAMB** — [GitHub](https://github.com/albarSamb) · [albarsambpro@gmail.com](mailto:albarsambpro@gmail.com)

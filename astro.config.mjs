@@ -4,10 +4,9 @@ import sitemap from '@astrojs/sitemap';
 import netlify from '@astrojs/netlify';
 
 export default defineConfig({
-  // TODO: remplacer par l'URL Netlify (ou le futur nom de domaine) une fois connu.
+  // URL publique du site (Netlify). À changer si un nom de domaine est ajouté.
   // Utilisée pour le sitemap, les canonical links et les balises Open Graph.
-  site: 'https://albarsamb.github.io',
-  output: 'server',
+  site: 'https://albarportfolio.netlify.app',
   adapter: netlify(),
   integrations: [sitemap()],
   vite: {
