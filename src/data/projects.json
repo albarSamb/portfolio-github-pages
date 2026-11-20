@@ -20,8 +20,8 @@
   {
     "title": "RAG Assistant",
     "subtitle": "Assistant sur ses propres documents",
-    "description": "Import de PDF, Word et Markdown, découpage, embeddings et recherche vectorielle, puis réponses en streaming avec les sources citées. Comptes utilisateurs isolés, historique des conversations, LLM au choix.",
-    "tech": ["FastAPI", "ChromaDB", "sentence-transformers", "Groq (Llama 3.3)", "Claude", "Vue 3"],
+    "description": "Import de PDF, Word et Markdown, découpage, embeddings et recherche vectorielle, puis réponses en streaming avec les sources citées. Comptes utilisateurs isolés, historique des conversations.",
+    "tech": ["FastAPI", "ChromaDB", "sentence-transformers", "Groq", "Vue 3"],
     "note": null,
     "link": "https://github.com/albarSamb/rag-assistant",
     "liveLink": null
