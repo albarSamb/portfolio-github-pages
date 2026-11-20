@@ -1,38 +1,38 @@
 [
   {
     "title": "Bichette Thomas",
-    "subtitle": "Application web de gestion (salon)",
-    "description": "Réservation + gestion + paiements intégrés (Wave / Orange Money). En production.",
-    "tech": ["Laravel", "React", "TypeScript", "PostgreSQL", "Redis", "Hetzner VPS"],
-    "note": "Rebuild en cours : Vue 3, FastAPI",
+    "subtitle": "Application de gestion pour un salon de coiffure (Dakar)",
+    "description": "Prise de rendez-vous en ligne avec paiement d'acompte (Wave, Orange Money, carte), caisse, commissions des coiffeuses, fidélité et reçus WhatsApp. Développement full-stack, front et back.",
+    "tech": ["Laravel", "React", "TypeScript", "PostgreSQL", "Redis", "Docker"],
+    "note": "En cours : agent IA de réservation (créneaux libres, réservation avec confirmation).",
     "link": "https://github.com/Birame-Owens/bichete-thomas",
     "liveLink": null
   },
   {
-    "title": "ND-World",
-    "subtitle": "E-commerce international",
-    "description": "Boutique en ligne multi-pays en production.",
-    "tech": ["Laravel", "PHP", "React"],
-    "note": null,
-    "link": null,
-    "liveLink": null
-  },
-  {
     "title": "Seetma",
-    "subtitle": "Reconnaissance faciale événementielle",
-    "description": "Retrouver ses photos d'événement via un scan du visage. Application fullstack.",
-    "tech": ["Computer Vision", "Deep Learning", "Fullstack"],
-    "note": null,
+    "subtitle": "Photos d'événement par reconnaissance faciale",
+    "description": "L'invité prend un selfie sur une borne et retrouve en 1 à 1,5 s toutes ses photos parmi 1 000+ clichés, au lieu d'attendre des jours. Plusieurs événements en parallèle, téléchargement HD, partage par QR code.",
+    "tech": ["InsightFace (ArcFace)", "FastAPI", "React", "MongoDB", "PostgreSQL", "Celery", "Cloudflare R2", "Docker"],
+    "note": "Projet co-développé, remise en ligne prévue.",
     "link": null,
     "liveLink": null
   },
   {
     "title": "RAG Assistant",
-    "subtitle": "Assistant documentaire",
-    "description": "Pipeline RAG complet : ingestion, retrieval, génération.",
-    "tech": ["ChromaDB", "FastAPI", "Claude API"],
+    "subtitle": "Assistant sur ses propres documents",
+    "description": "Import de PDF, Word et Markdown, découpage, embeddings et recherche vectorielle, puis réponses en streaming avec les sources citées. Comptes utilisateurs isolés, historique des conversations, LLM au choix.",
+    "tech": ["FastAPI", "ChromaDB", "sentence-transformers", "Groq (Llama 3.3)", "Claude", "Vue 3"],
     "note": null,
     "link": "https://github.com/albarSamb/rag-assistant",
+    "liveLink": null
+  },
+  {
+    "title": "ND-World",
+    "subtitle": "E-commerce international",
+    "description": "Boutique en ligne multi-pays en production, co-développée.",
+    "tech": ["Laravel", "PHP", "React"],
+    "note": null,
+    "link": null,
     "liveLink": null
   },
   {
@@ -59,15 +59,6 @@
     "description": "CNN de détection de pipelines (98,94 % accuracy, 99,41 % recall) + MLP résiduel pour la régression de largeur (MAE 0,37 m).",
     "tech": ["CNN", "Residual MLP", "PyTorch"],
     "note": "Projet sous accord de confidentialité, pas de repo public.",
-    "link": null,
-    "liveLink": null
-  },
-  {
-    "title": "AI Engineering Roadmap",
-    "subtitle": "Ressources open source",
-    "description": "Roadmap et ressources curées pour l'ingénierie IA (RAG, agents, éval, déploiement).",
-    "tech": ["Open source", "Documentation"],
-    "note": null,
     "link": null,
     "liveLink": null
   }
